@@ -43,6 +43,7 @@ Plug 'rhysd/vim-clang-format'
 Plug 'junegunn/limelight.vim'
 Plug 'dietsche/vim-lastplace'
 Plug 'hail2u/vim-css3-syntax'
+Plug 'raichoo/purescript-vim'
 let completer = 'oblitum/YouCompleteMe'
 if has("python3") && !has("python")
     let completer = 'Shougo/neocomplete.vim'
@@ -68,6 +69,7 @@ Plug 'thinca/vim-quickrun'
 Plug 'Slava/vim-spacebars'
 Plug 'groenewege/vim-less'
 Plug 'hsanson/vim-android'
+Plug 'frigoeu/psc-ide-vim'
 Plug 'honza/vim-snippets'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
@@ -485,7 +487,9 @@ let g:instant_markdown_autostart = 0
 
 " vim-operator-highlight Setup {{{
 let g:ophigh_highlight_link_group = 'Keyword'
-let g:ophigh_filetypes_to_ignore = { "haskell": 1, "javascript": 1, "html": 1, "css": 1, "scss": 1, "pandoc": 1 }
+let g:ophigh_filetypes_to_ignore = { "haskell": 1, "javascript": 1, "html": 1,
+                                   \ "css": 1, "scss": 1, "pandoc": 1,
+                                   \ "purescript": 1 }
 " }}}
 
 " tern_for_vim Setup {{{
