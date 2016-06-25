@@ -1,4 +1,5 @@
-set recolor
+set recolor true
+set recolor-keephue true
 set render-loading false
 set selection-clipboard clipboard
 set guioptions ""
