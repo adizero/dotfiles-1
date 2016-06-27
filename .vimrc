@@ -60,6 +60,7 @@ Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 "Plug 'edkolev/tmuxline.vim'
 Plug 'djoshea/vim-autoread'
 Plug 'junegunn/vim-journal'
+Plug 'rhysd/vim-grammarous'
 Plug 'tikhomirov/vim-glsl'
 Plug 'Shougo/vimfiler.vim'
 Plug 'Shougo/vimshell.vim'
