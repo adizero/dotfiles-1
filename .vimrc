@@ -4,7 +4,7 @@
 if empty(glob('~/.vim/autoload/plug.vim'))
     silent !mkdir -p ~/.vim/autoload
     silent !curl -fLo ~/.vim/autoload/plug.vim
-          \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     au VimEnter * PlugInstall
 endif
 " }}}
@@ -202,11 +202,11 @@ let g:airline_powerline_fonts = 1
 
 " C++
 au BufNewFile,BufRead *
-            \ if expand('%:e') =~ '^\(h\|hh\|hxx\|hpp\|ii\|ixx\|ipp\|inl\|txx\|tpp\|tpl\|cc\|cxx\|cpp\)$' |
-            \     if &ft != 'cpp'                                                                         |
-            \         set ft=cpp                                                                          |
-            \     endif                                                                                   |
-            \ endif
+    \ if expand('%:e') =~ '^\(h\|hh\|hxx\|hpp\|ii\|ixx\|ipp\|inl\|txx\|tpp\|tpl\|cc\|cxx\|cpp\)$' |
+    \     if &ft != 'cpp'                                                                         |
+    \         set ft=cpp                                                                          |
+    \     endif                                                                                   |
+    \ endif
 
 " Go
 let g:godef_split = 0
@@ -317,10 +317,10 @@ let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 let g:ycm_semantic_triggers = { 'haskell' : ['.'], 'elm' : ['.'] }
 let g:ycm_rust_src_path = '/opt/src/rust/src'
 let g:ycm_filetype_specific_completion_to_disable = {
-      \ 'gitcommit': 1,
-      \ 'html': 1,
-      \ 'css': 1
-      \}
+    \ 'gitcommit': 1,
+    \ 'html': 1,
+    \ 'css': 1
+    \}
 nnoremap <leader>h :YcmCompleter GoToDeclaration<cr>
 nnoremap <leader>? :YcmCompleter GoToDefinitionElseDeclaration<cr>
 nnoremap <leader>d :YcmCompleter GoToDefinition<cr>
@@ -355,24 +355,24 @@ let g:UltiSnipsExpandTrigger = '<c-a>'
 
 " QuickRun Setup {{{
 let g:quickrun_config = {
-            \   '_': {
-            \     'outputter/buffer/close_on_empty': 1
-            \   },
-            \   'haskell' : {
-            \     'command': 'stack',
-            \     'cmdopt': 'runghc --verbosity silent'
-            \   },
-            \   'cpp' : {
-            \     'command': 'clang++',
-            \     'cmdopt': '-g -O0 -Wall -Wextra -pedantic -std=c++1z -lpthread'
-            \   },
-            \   'swift' : {
-            \     'command': 'swiftc',
-            \     'exec': ['%c %o %s -o %s:p:r', '%s:p:r %a'],
-            \     'tempfile': '%{tempname()}.swift',
-            \     'hook/sweep/files': ['%S:p:r'],
-            \   }
-            \ }
+    \   '_': {
+    \     'outputter/buffer/close_on_empty': 1
+    \   },
+    \   'haskell' : {
+    \     'command': 'stack',
+    \     'cmdopt': 'runghc --verbosity silent'
+    \   },
+    \   'cpp' : {
+    \     'command': 'clang++',
+    \     'cmdopt': '-g -O0 -Wall -Wextra -pedantic -std=c++1z -lpthread'
+    \   },
+    \   'swift' : {
+    \     'command': 'swiftc',
+    \     'exec': ['%c %o %s -o %s:p:r', '%s:p:r %a'],
+    \     'tempfile': '%{tempname()}.swift',
+    \     'hook/sweep/files': ['%S:p:r'],
+    \   }
+    \ }
 " }}}
 
 " localvimrc Setup {{{
@@ -400,16 +400,16 @@ nnoremap <silent> <leader>b :CtrlPBuffer<cr>
 
 " ClangFormat Setup {{{
 let g:clang_format#style_options = {
-            \ "AccessModifierOffset": -4,
-            \ "AllowShortLoopsOnASingleLine": "false",
-            \ "AllowShortBlocksOnASingleLine" : "false",
-            \ "AllowShortIfStatementsOnASingleLine": "false",
-            \ "AlwaysBreakTemplateDeclarations": "false",
-            \ "DerivePointerBinding": "false",
-            \ "PointerBindsToType": "false",
-            \ "ColumnLimit": 80,
-            \ "TabWidth": 4,
-            \ "Standard": "C++11" }
+    \ "AccessModifierOffset": -4,
+    \ "AllowShortLoopsOnASingleLine": "false",
+    \ "AllowShortBlocksOnASingleLine" : "false",
+    \ "AllowShortIfStatementsOnASingleLine": "false",
+    \ "AlwaysBreakTemplateDeclarations": "false",
+    \ "DerivePointerBinding": "false",
+    \ "PointerBindsToType": "false",
+    \ "ColumnLimit": 80,
+    \ "TabWidth": 4,
+    \ "Standard": "C++11" }
 au FileType c,cpp,objc,objcpp noremap  <silent> <buffer> <leader>= :ClangFormat<cr>
 " }}}
 
@@ -425,8 +425,8 @@ if &rtp =~ '\<jedi\>'
     augroup JediSetup
         au!
         au FileType python
-              \ setlocal omnifunc=jedi#completions  |
-              \ call jedi#configure_call_signatures()
+            \ setlocal omnifunc=jedi#completions  |
+            \ call jedi#configure_call_signatures()
     augroup END
 endif
 " }}}
@@ -488,9 +488,10 @@ let g:instant_markdown_autostart = 0
 
 " vim-operator-highlight Setup {{{
 let g:ophigh_highlight_link_group = 'Keyword'
-let g:ophigh_filetypes_to_ignore = { "haskell": 1, "javascript": 1, "html": 1,
-                                   \ "css": 1, "scss": 1, "pandoc": 1,
-                                   \ "purescript": 1 }
+let g:ophigh_filetypes_to_ignore = {
+    \ "haskell": 1, "javascript": 1, "html": 1, "css": 1, "scss": 1,
+    \ "pandoc": 1, "purescript": 1
+    \ }
 " }}}
 
 " tern_for_vim Setup {{{
@@ -633,9 +634,9 @@ let g:tagbar_type_markdown = {
 if has('gui_gtk') && has('gui_running')
     let s:border = synIDattr(synIDtrans(hlID('Normal')), 'bg', 'gui')
     exe 'silent !echo ''style "vimfix" { bg[NORMAL] = "' . escape(s:border, '#') . '" }'''.
-                \' > ~/.gtkrc-2.0'
+        \' > ~/.gtkrc-2.0'
     exe 'silent !echo ''widget "vim-main-window.*GtkForm" style "vimfix"'''.
-                \' >> ~/.gtkrc-2.0'
+        \' >> ~/.gtkrc-2.0'
 endif
 " }}}
 
@@ -667,7 +668,7 @@ command! -nargs=0 Messages :redir => bufout | silent :messages | redir END | new
 " Gist it to bl.ocks.org {{{
 let g:gist_clip_command = 'xclip -selection clipboard'
 command! -range=% Blocks
-            \ <line1>,<line2>Format format | f index.html | exe 'Gist! -p' | bd!                                    |
-            \ let @+ = 'http://bl.ocks.org/oblitum/raw/' . matchstr(@+, 'https://gist.github.com/\zs\w\+\ze') . '/' |
-            \ let @+ = bitly#shorten(@+).url | redraw | echomsg 'Done: ' . @+ | setlocal nomodified
+    \ <line1>,<line2>Format format | f index.html | exe 'Gist! -p' | bd!                                    |
+    \ let @+ = 'http://bl.ocks.org/oblitum/raw/' . matchstr(@+, 'https://gist.github.com/\zs\w\+\ze') . '/' |
+    \ let @+ = bitly#shorten(@+).url | redraw | echomsg 'Done: ' . @+ | setlocal nomodified
 " }}}
