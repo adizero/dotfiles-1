@@ -446,9 +446,11 @@ au BufReadPost * :GuessIndent
 " }}}
 
 " lengthmatters Setup {{{
-let g:lengthmatters_on_by_default = 0
-call lengthmatters#highlight_link_to('Visual')
-au FileType c,cpp,go :LengthmattersEnable
+let g:lengthmatters_excluded = [
+    \ '', 'qf', 'help', 'unite', 'tagbar', 'gundo', 'vimshell', 'vimfiler', 'quickrun',
+    \ 'zsh', 'html', 'javascript', 'css', 'scss', 'latex',
+    \ 'haskell', 'purescript', 'elm'
+    \ ]
 " }}}
 
 " Indent Guides Setup {{{
