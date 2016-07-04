@@ -453,6 +453,15 @@ let g:lengthmatters_excluded = [
     \ ]
 " }}}
 
+" vim-operator-highlight Setup {{{
+let g:ophigh_highlight_link_group = 'Keyword'
+let g:ophigh_filetypes_to_ignore = {
+    \ '': 1, 'qf': 1, 'help': 1, 'unite': 1, 'tagbar': 1, 'gundo': 1, 'vimshell': 1, 'vimfiler': 1, 'quickrun': 1,
+    \ 'zsh': 1, 'gitcommit': 1, 'text': 1, 'html': 1, 'javascript': 1, 'css': 1, 'scss': 1, 'latex': 1, 'pandoc': 1,
+    \ 'haskell': 1, 'purescript': 1, 'elm': 1
+    \ }
+" }}}
+
 " Indent Guides Setup {{{
 let g:indent_guides_enable_on_vim_startup = 0
 " }}}
@@ -486,14 +495,6 @@ nnoremap <leader>g :Goyo<cr>
 
 " vim-instant-markdown Setup {{{
 let g:instant_markdown_autostart = 0
-" }}}
-
-" vim-operator-highlight Setup {{{
-let g:ophigh_highlight_link_group = 'Keyword'
-let g:ophigh_filetypes_to_ignore = {
-    \ "haskell": 1, "javascript": 1, "html": 1, "css": 1, "scss": 1,
-    \ "pandoc": 1, "purescript": 1
-    \ }
 " }}}
 
 " tern_for_vim Setup {{{
