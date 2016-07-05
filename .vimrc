@@ -446,6 +446,7 @@ au BufReadPost * :GuessIndent
 " }}}
 
 " lengthmatters Setup {{{
+let g:lengthmatters_highlight_colors = 'ctermbg=237 guibg=#585858 guifg=#262626'
 let g:lengthmatters_excluded = [
     \ '', 'qf', 'help', 'unite', 'tagbar', 'gundo', 'vimshell', 'vimfiler', 'quickrun',
     \ 'zsh', 'html', 'javascript', 'css', 'scss', 'latex',
