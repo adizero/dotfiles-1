@@ -161,7 +161,7 @@ au WinEnter * if &previewwindow | setlocal wrap | endif
 " Mappings
 nnoremap <leader>l :redraw!<cr>
 " CTRL-W__ and CTRL-W_bar on steroids (resize windows adjusting to text)
-nnoremap <silent><c-w>_ :<c-u>resize <c-r>=line("$")<cr><cr>
+nnoremap <expr><silent> <c-w>_ (v:count ? v:count : float2nr(ceil(eval(join(map(getline(1,'$'),'max([winwidth(0),virtcol([v:key+1,"$"])])'),'+'))/str2float(winwidth(0).'.0'))))."\<c-w>_"
 nnoremap <expr><silent> <c-w><bar> (v:count ? v:count : max(map(getline(1,'$'),'virtcol([v:key+1,"$"])'))-1)."\<c-w>\<bar>"
 
 " Ignored extensions
