@@ -324,10 +324,12 @@ let g:ycm_filetype_specific_completion_to_disable = {
     \ 'html': 1,
     \ 'css': 1
     \}
-nnoremap <leader>h :YcmCompleter GoToDeclaration<cr>
-nnoremap <leader>? :YcmCompleter GoToDefinitionElseDeclaration<cr>
-nnoremap <leader>d :YcmCompleter GoToDefinition<cr>
-nnoremap <leader>i :YcmCompleter FixIt<cr>
+nnoremap <leader>1 :YcmCompleter GoToDeclaration<cr>
+nnoremap <leader>2 :YcmCompleter GoToDefinition<cr>
+nnoremap <leader>3 :YcmCompleter GoToImprecise<cr>
+nnoremap <leader>4 :YcmCompleter GoTo<cr>
+nnoremap <leader>i :YcmCompleter GoToInclude<cr>
+nnoremap <leader>x :YcmCompleter FixIt<cr>
 " }}}
 
 " neocomplete Setup {{{
