@@ -95,6 +95,7 @@ Plug 'eagletmt/neco-ghc'
 Plug 'tmhedberg/matchit'
 Plug 'fmoralesc/vim-pad'
 Plug 'majutsushi/tagbar'
+Plug 'szw/vim-maximizer'
 Plug 'tpope/vim-eunuch'
 Plug 'SirVer/ultisnips'
 Plug 'mattn/webapi-vim'
@@ -443,7 +444,13 @@ let g:pad#open_in_split = 0
 " }}}
 
 " ZoomWin Setup {{{
-nnoremap <leader>z :ZoomWin<cr>
+nnoremap <silent><F4> :ZoomWin<CR>
+vnoremap <silent><F4> :ZoomWin<CR>gv
+inoremap <silent><F4> <C-o>:ZoomWin<CR>
+" }}}
+
+" vim-maximizer Setup {{{
+let g:maximizer_set_mapping_with_bang = 1
 " }}}
 
 " GuessIndent Setup {{{
