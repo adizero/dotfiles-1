@@ -450,6 +450,12 @@ nnoremap <leader>z :ZoomWin<cr>
 au BufReadPost * :GuessIndent
 " }}}
 
+" better-whitespace Setup {{{
+let g:better_whitespace_filetypes_blacklist = [
+    \ 'qf', 'help', 'unite', 'tagbar', 'gundo', 'vimshell', 'vimfiler', 'quickrun', 'vim-plug'
+    \ ]
+" }}}
+
 " lengthmatters Setup {{{
 let g:lengthmatters_highlight_colors = 'ctermbg=237 guibg=#585858 guifg=#262626'
 let g:lengthmatters_excluded = [
@@ -522,10 +528,6 @@ let g:gradle_path = '/usr/bin'
 
 " Vebugger Setup {{{
 let g:vebugger_leader = '<leader>v'
-" }}}
-
-" better-whitespace Setup {{{
-let g:better_whitespace_filetypes_blacklist = ['vimfiler']
 " }}}
 
 " vim-multiple-cursors Setup {{{
