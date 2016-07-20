@@ -4,9 +4,12 @@ export DASHT_DOCSETS_DIR=$HOME/.local/share/Zeal/Zeal/docsets
 
 export RUST_SRC_PATH=/opt/src/rust/src
 
+GEM_PATH=$(ruby -rubygems -e "puts Gem.user_dir")
+
 if [ -d "$HOME/.cargo" ]; then export CARGO_HOME=$HOME/.cargo; fi
 if [ -n "$CARGO_HOME" ]; then PATH=$CARGO_HOME/bin:$PATH; fi
 if [ -d "$HOME/.pyenv/bin" ]; then PATH=$HOME/.pyenv/bin:$PATH; fi
+if [ -n "$GEM_PATH" ]; then PATH=$GEM_PATH/bin:$PATH; fi
 if [ -d "$HOME/.rbenv/bin" ]; then PATH=$HOME/.rbenv/bin:$PATH; fi
 if [ -d "$HOME/.nodenv/bin" ]; then PATH=$HOME/.nodenv/bin:$PATH; fi
 if [ -d "$HOME/.cabal/bin" ]; then PATH=$HOME/.cabal/bin:$PATH; fi
