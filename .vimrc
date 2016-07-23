@@ -198,7 +198,7 @@ hi! NonText ctermbg=NONE
 " }}}
 
 " Airline Setup {{{
-let g:airline_theme = 'hybrid'
+let g:airline_theme = 'base16_grayscale'
 let g:airline_powerline_fonts = 1
 " }}}
 
