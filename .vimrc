@@ -142,7 +142,6 @@ set nowrap                  " don't wrap lines
 set clipboard=unnamedplus   " for simplified clipboard copy/paste
 set noshowmode              " hide the default mode text (e.g. -- INSERT -- below the statusline)
 set noshowcmd               " disable blinking command feedback in bottom-right corner
-set mouse=a                 " enable mouse to get scrolling
 set vb t_vb=                " no visual bell
 set pumheight=30            " limit popup menu height
 set concealcursor=nv        " expand concealed characters in insert mode solely
