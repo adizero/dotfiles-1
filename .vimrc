@@ -289,6 +289,8 @@ endfunction
 
 let g:syntastic_error_symbol = '✘'
 let g:syntastic_warning_symbol = '☢'
+let g:syntastic_style_error_symbol = '✍'
+let g:syntastic_style_warning_symbol = '✍'
 hi! link SyntasticErrorLine SignColumn
 hi! link SyntasticWarningLine SignColumn
 au VimEnter,ColorScheme * exec 'hi! SyntasticErrorSign guifg=red ctermfg=red ' . s:getbg('SyntasticErrorLine')
