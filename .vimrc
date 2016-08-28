@@ -18,6 +18,7 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'Valloric/vim-operator-highlight'
 Plug 'pbrisbin/vim-syntax-shakespeare'
 Plug 'nathanaelkane/vim-indent-guides'
+Plug 'tyrannicaltoucan/vim-deep-space'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'vim-airline/vim-airline-themes'
@@ -195,9 +196,11 @@ endif
 " }}}
 
 " Colorscheme {{{
-colors apprentice
+set background=dark
+colors deep-space
 "colors seoul256-light
 hi! link Conceal Normal
+hi! link SignColumn ColorColumn
 if !has('gui_running')
     hi! Normal ctermbg=NONE guibg=NONE
     hi! NonText ctermbg=NONE guibg=NONE
@@ -205,7 +208,7 @@ endif
 " }}}
 
 " Airline Setup {{{
-let g:airline_theme = 'base16_grayscale'
+let g:airline_theme = 'deep_space'
 let g:airline_powerline_fonts = 1
 " }}}
 
@@ -474,7 +477,7 @@ let g:better_whitespace_filetypes_blacklist = [
 " }}}
 
 " lengthmatters Setup {{{
-let g:lengthmatters_highlight_colors = 'ctermbg=237 guibg=#585858 guifg=#262626'
+call lengthmatters#highlight_link_to('ColorColumn')
 let g:lengthmatters_excluded = [
     \ '', 'qf', 'help', 'unite', 'tagbar', 'gundo', 'vimshell', 'vimfiler', 'quickrun', 'vim-plug', 'codi', 'vmailMessageList',
     \ 'zsh', 'html', 'javascript', 'css', 'scss', 'latex',
