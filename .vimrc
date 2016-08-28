@@ -247,6 +247,18 @@ au BufNewFile,BufRead *.mmark set filetype=pandoc
 
 " Elm
 let g:elm_setup_keybindings = 0
+
+" Purescript
+au FileType purescript set concealcursor=vin
+au WinEnter,BufEnter,BufRead,FileType,Colorscheme *
+    \ if exists('w:lambda_conceal')                                                  |
+    \     call matchdelete(w:lambda_conceal)                                         |
+    \     unlet w:lambda_conceal                                                     |
+    \ endif                                                                          |
+    \ if &ft == 'purescript'                                                         |
+    \     let w:lambda_conceal = matchadd('Conceal', '\\', 10, -1, {'conceal': 'λ'}) |
+    \     hi! link Conceal Operator                                                  |
+    \ endif
 " }}}
 
 " format.vim Setup {{{
