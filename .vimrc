@@ -45,11 +45,8 @@ Plug 'junegunn/limelight.vim'
 Plug 'dietsche/vim-lastplace'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'raichoo/purescript-vim'
-let completer = 'oblitum/YouCompleteMe'
-if has("python3") && !has("python")
-    let completer = 'Shougo/neocomplete.vim'
-endif
-Plug completer
+"Plug 'Shougo/neocomplete.vim'
+Plug 'oblitum/YouCompleteMe'
 Plug 'embear/vim-localvimrc'
 "Plug 'vim-pandoc/vim-pandoc'
 Plug 'pgdouyon/vim-evanesco'
