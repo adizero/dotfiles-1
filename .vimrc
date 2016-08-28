@@ -145,11 +145,13 @@ set noshowmode              " hide the default mode text (e.g. -- INSERT -- belo
 set noshowcmd               " disable blinking command feedback in bottom-right corner
 set vb t_vb=                " no visual bell
 set pumheight=30            " limit popup menu height
+set conceallevel=2          " hides concealed text
 set concealcursor=nv        " expand concealed characters in insert mode solely
 set expandtab tabstop=4 shiftwidth=4 softtabstop=4 " space for tabs by default
 set t_ut=                   " fix 256 colors in tmux http://sunaku.github.io/vim-256color-bce.html
 set spelllang=en,pt_br      " set default spelling languages
 set updatetime=300          " set updatetime to shorter value
+set mouse=                  " disable mouse
 
 au GUIEnter * set vb t_vb=  " enforces no visual bell for GUI
 
@@ -240,6 +242,7 @@ let g:elm_setup_keybindings = 0
 " }}}
 
 " format.vim Setup {{{
+let g:format_FormatConcealed = 1
 let g:format_HTMLAdditionalCSS = '
 \ @font-face {
 \   font-family: "monofur";
@@ -422,7 +425,7 @@ au FileType c,cpp,objc,objcpp noremap  <silent> <buffer> <leader>= :ClangFormat<
 " }}}
 
 " Jedi Setup {{{
-if completer == 'Shougo/neocomplete.vim'
+if exists(':NeoCompleteEnable')
     let g:jedi#popup_on_dot = 0
 endif
 let g:jedi#auto_initialization = 0
@@ -456,7 +459,7 @@ let g:maximizer_set_mapping_with_bang = 1
 " }}}
 
 " GuessIndent Setup {{{
-au BufReadPost * :GuessIndent
+au BufReadPost * if exists(':GuessIndent') | :GuessIndent | endif
 " }}}
 
 " better-whitespace Setup {{{
