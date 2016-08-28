@@ -150,6 +150,11 @@ set t_ut=                   " fix 256 colors in tmux http://sunaku.github.io/vim
 set spelllang=en,pt_br      " set default spelling languages
 set updatetime=300          " set updatetime to shorter value
 set mouse=                  " disable mouse
+if has("termguicolors") && has("nvim") " set true colors on NeoVim
+    set t_8f=[38;2;%lu;%lu;%lum
+    set t_8b=[48;2;%lu;%lu;%lum
+    set termguicolors
+endif
 
 au GUIEnter * set vb t_vb=  " enforces no visual bell for GUI
 
@@ -193,8 +198,10 @@ endif
 colors apprentice
 "colors seoul256-light
 hi! link Conceal Normal
-hi! Normal ctermbg=NONE
-hi! NonText ctermbg=NONE
+if !has('gui_running')
+    hi! Normal ctermbg=NONE guibg=NONE
+    hi! NonText ctermbg=NONE guibg=NONE
+endif
 " }}}
 
 " Airline Setup {{{
@@ -259,7 +266,7 @@ let g:format_HTMLAdditionalCSS = '
 " getbg function {{{
 " gets background of a highlighting group with fallback to SignColumn group
 function! s:getbg(group)
-    if has("gui_running")
+    if has('gui_running') || has('termguicolors') && &termguicolors
         let l:mode = 'gui'
         let l:validation = '\w\+\|#\x\+'
     else
