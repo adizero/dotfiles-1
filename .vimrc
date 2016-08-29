@@ -104,7 +104,6 @@ Plug 'tpope/vim-ragtag'
 Plug 'Shougo/unite.vim'
 Plug 'chrisbra/NrrwRgn'
 Plug 'mileszs/ack.vim'
-Plug 'drn/zoomwin-vim'
 Plug 'xolox/vim-shell'
 Plug 'keith/swift.vim'
 Plug 'elmcast/elm-vim'
@@ -468,12 +467,6 @@ let g:pad#set_mappings = 0
 let g:pad#open_in_split = 0
 " }}}
 
-" ZoomWin Setup {{{
-nnoremap <silent><F4> :ZoomWin<CR>
-vnoremap <silent><F4> :ZoomWin<CR>gv
-inoremap <silent><F4> <C-o>:ZoomWin<CR>
-" }}}
-
 " vim-maximizer Setup {{{
 let g:maximizer_set_mapping_with_bang = 1
 " }}}
@@ -534,7 +527,9 @@ au! User GoyoLeave
 au  User GoyoEnter nested call <SID>goyo_enter()
 au  User GoyoLeave nested call <SID>goyo_leave()
 
-nnoremap <leader>g :Goyo<cr>
+nnoremap <silent><F4> :Goyo<CR>
+vnoremap <silent><F4> :Goyo<CR>gv
+inoremap <silent><F4> <C-o>:Goyo<CR>
 " }}}
 
 " vim-instant-markdown Setup {{{
