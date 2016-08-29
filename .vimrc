@@ -508,23 +508,16 @@ let g:goyo_width = 120
 let g:goyo_margin_top = 2
 let g:goyo_margin_bottom = 2
 
-function! s:goyo_enter()
-    if !has('gui_running')
-        silent !tmux set status off
-    endif
-endfunction
-
 function! s:goyo_leave()
+    hi! link Conceal Normal
+    hi! link SignColumn ColorColumn
     if !has('gui_running')
-        silent !tmux set status on
+        hi! Normal ctermbg=NONE guibg=NONE
+        hi! NonText ctermbg=NONE guibg=NONE
     endif
-    hi! Normal ctermbg=NONE
-    hi! NonText ctermbg=NONE
 endfunction
 
-au! User GoyoEnter
 au! User GoyoLeave
-au  User GoyoEnter nested call <SID>goyo_enter()
 au  User GoyoLeave nested call <SID>goyo_leave()
 
 nnoremap <silent><F4> :Goyo<CR>
