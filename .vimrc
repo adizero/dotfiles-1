@@ -583,6 +583,12 @@ let g:codi#interpreters = {
     \ }
 "}}}
 
+" Gist.vim Setup {{{
+if !has('gui_running')
+    let g:gist_clip_command = 'xclip -selection clipboard'
+endif
+"}}}
+
 " TagBar Setup {{{
 nnoremap <leader>t :TagbarToggle<cr>
 
@@ -706,7 +712,6 @@ command! -nargs=0 Messages :redir => bufout | silent :messages | redir END | new
 " }}}
 
 " Gist it to bl.ocks.org {{{
-let g:gist_clip_command = 'xclip -selection clipboard'
 command! -range=% Blocks
     \ <line1>,<line2>Format format | f index.html | exe 'Gist! -p' | bd!                                    |
     \ let @+ = 'http://bl.ocks.org/oblitum/raw/' . matchstr(@+, 'https://gist.github.com/\zs\w\+\ze') . '/' |
