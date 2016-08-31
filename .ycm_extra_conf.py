@@ -7,7 +7,8 @@ c_flags = [
 '-Wextra',
 '-std=gnu11',
 '-isystem', '/usr/local/include',
-'-isystem', '/usr/lib/clang/4.0.0/include',
+'-isystem', '/usr/lib/llvm-5.0/lib/clang/5.0.0/include',
+'-isystem', '/usr/include/x86_64-linux-gnu',
 '-isystem', '/usr/include',
 ]
 
@@ -18,9 +19,10 @@ cxx_flags = [
 '-pedantic',
 '-std=c++1z',
 '-stdlib=libc++',
+'-isystem', '/usr/include/clang/5.0.0/include',
 '-isystem', '/usr/include/c++/v1',
 '-isystem', '/usr/local/include',
-'-isystem', '/usr/lib/clang/4.0.0/include',
+'-isystem', '/usr/include/x86_64-linux-gnu',
 '-isystem', '/usr/include',
 ]
 

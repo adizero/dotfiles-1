@@ -430,11 +430,11 @@ let g:quickrun_config = {
     \     'outputter/buffer/close_on_empty': 1
     \   },
     \   'c' : {
-    \     'command': 'clang',
+    \     'command': 'clang-5.0',
     \     'cmdopt': '-g -O0 -Wall -Wextra -std=gnu11 -lpthread'
     \   },
     \   'cpp' : {
-    \     'command': 'clang++',
+    \     'command': 'clang++-5.0',
     \     'cmdopt': '-g -O0 -Wall -Wextra -pedantic -std=c++1z -stdlib=libc++ -lc++abi -lpthread'
     \   },
     \   'swift' : {
@@ -470,6 +470,7 @@ au FileType vimfiler nmap <silent><buffer> <2-LeftMouse> <Plug>(vimfiler_smart_l
 " }}}
 
 " Clang-Format Setup {{{
+let g:clang_format#command = 'clang-format-5.0'
 let g:clang_format#detect_style_file = 1
 let g:clang_format#style_options = {
     \ "Standard": "Cpp11",

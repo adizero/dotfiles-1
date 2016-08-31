@@ -1,6 +1,4 @@
 alias cls=clear
-alias rm=trash-put
 alias gdb='/usr/bin/gdb -silent'
 alias vimpy3=/opt/vim-for-python3/bin/vim
 alias dictionary=sdcv
-alias cat='ccat --bg=dark'
