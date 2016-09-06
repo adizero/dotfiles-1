@@ -589,6 +589,10 @@ if !has('gui_running')
 endif
 "}}}
 
+" vim-lastplace Setup {{{
+let g:lastplace_open_folds = 0
+"}}}
+
 " TagBar Setup {{{
 nnoremap <leader>t :TagbarToggle<cr>
 
