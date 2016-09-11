@@ -553,12 +553,12 @@ let g:vebugger_leader = '<leader>v'
 " vim-multiple-cursors Setup {{{
 function! Multiple_cursors_before()
     let g:ycm_auto_trigger = 0
-    silent! exe 'NeoCompleteDisable'
+    silent! exec 'NeoCompleteDisable'
 endfunction
 
 function! Multiple_cursors_after()
     let g:ycm_auto_trigger = 1
-    silent! exe 'NeoCompleteEnable'
+    silent! exec 'NeoCompleteEnable'
 endfunction
 " }}}
 
@@ -683,9 +683,9 @@ let g:tagbar_type_markdown = {
 " Fix borders of fullscreen GUI {{{
 if has('gui_gtk') && has('gui_running')
     let s:border = synIDattr(synIDtrans(hlID('Normal')), 'bg', 'gui')
-    exe 'silent !echo ''style "vimfix" { bg[NORMAL] = "' . escape(s:border, '#') . '" }'''.
+    exec 'silent !echo ''style "vimfix" { bg[NORMAL] = "' . escape(s:border, '#') . '" }'''.
         \' > ~/.gtkrc-2.0'
-    exe 'silent !echo ''widget "vim-main-window.*GtkForm" style "vimfix"'''.
+    exec 'silent !echo ''widget "vim-main-window.*GtkForm" style "vimfix"'''.
         \' >> ~/.gtkrc-2.0'
 endif
 " }}}
@@ -716,8 +716,23 @@ command! -nargs=0 Messages :redir => bufout | silent :messages | redir END | new
 " }}}
 
 " Gist it to bl.ocks.org {{{
-command! -range=% Blocks
-    \ <line1>,<line2>Format format | f index.html | exe 'Gist! -p' | bd!                                    |
-    \ let @+ = 'http://bl.ocks.org/oblitum/raw/' . matchstr(@+, 'https://gist.github.com/\zs\w\+\ze') . '/' |
-    \ let @+ = bitly#shorten(@+).url | redraw | echomsg 'Done: ' . @+ | setlocal nomodified
+function! Blocks() range
+    if !has('gui_running')
+        hi! Normal ctermbg=234 guibg=#1b202a
+        exec a:firstline . ',' . a:lastline . 'Format format'
+        hi! Normal ctermbg=NONE guibg=NONE
+    else
+        exec a:firstline . ',' . a:lastline . 'Format format'
+    endif
+    f index.html
+    exec 'Gist! -p'
+    bd!
+    let @+ = 'http://bl.ocks.org/oblitum/raw/' . matchstr(@+, 'https://gist.github.com/\zs\w\+\ze') . '/'
+    let @+ = bitly#shorten(@+).url
+    redraw
+    echomsg 'Done: ' . @+
+    setlocal nomodified
+endfunction
+
+command! -range=% Blocks <line1>,<line2>call Blocks()
 " }}}
