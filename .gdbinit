@@ -717,6 +717,8 @@ class Source(Dashboard.Module):
         out = []
         number_format = '{{:>{}}}'.format(len(str(end)))
         for number, line in enumerate(self.source_lines[start:end], start + 1):
+            # properly handle UTF-8 source files
+            line = to_string(line)
             if int(number) == current_line:
                 # the current line has a different style without ANSI
                 if R.ansi:
@@ -786,10 +788,14 @@ instructions constituting the current statement are marked, if available."""
                 pass  # e.g., @plt
         # fetch the assembly flavor and the extension used by Pygments
         # TODO save the lexer and reuse it if performance becomes a problem
+        try:
+            flavor = gdb.parameter('disassembly-flavor')
+        except:
+            flavor = None  # not always defined (see #36)
         filename = {
             'att': '.s',
             'intel': '.asm'
-        }.get(gdb.parameter('disassembly-flavor'), '.s')
+        }.get(flavor, '.s')
         # return the machine code
         max_length = max(instr['length'] for instr in asm)
         inferior = gdb.selected_inferior()
@@ -1255,6 +1261,7 @@ class Expressions(Dashboard.Module):
             }
         }
 
+# XXX traceback line numbers in this Python block must be increased by 1
 end
 
 # Better GDB defaults ----------------------------------------------------------
