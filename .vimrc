@@ -485,7 +485,7 @@ let g:better_whitespace_filetypes_blacklist = [
 call lengthmatters#highlight_link_to('ColorColumn')
 let g:lengthmatters_excluded = [
     \ '', 'qf', 'help', 'unite', 'tagbar', 'gundo', 'vimshell', 'vimfiler', 'quickrun', 'vim-plug', 'codi', 'vmailMessageList',
-    \ 'zsh', 'html', 'javascript', 'css', 'scss', 'latex',
+    \ 'zsh', 'html', 'javascript', 'json', 'css', 'scss', 'latex',
     \ 'haskell', 'purescript', 'elm'
     \ ]
 " }}}
@@ -494,7 +494,7 @@ let g:lengthmatters_excluded = [
 let g:ophigh_highlight_link_group = 'Keyword'
 let g:ophigh_filetypes_to_ignore = {
     \ 'qf': 1, 'help': 1, 'unite': 1, 'tagbar': 1, 'gundo': 1, 'vimshell': 1, 'vimfiler': 1, 'quickrun': 1, 'vim-plug': 1, 'codi': 1, 'vmailMessageList': 1,
-    \ 'zsh': 1, 'gitcommit': 1, 'text': 1, 'html': 1, 'javascript': 1, 'css': 1, 'scss': 1, 'latex': 1, 'pandoc': 1,
+    \ 'zsh': 1, 'gitcommit': 1, 'text': 1, 'html': 1, 'javascript': 1, 'json': 1, 'css': 1, 'scss': 1, 'latex': 1, 'pandoc': 1,
     \ 'haskell': 1, 'purescript': 1, 'elm': 1
     \ }
 " }}}
