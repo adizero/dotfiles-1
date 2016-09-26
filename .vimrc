@@ -178,7 +178,7 @@ set wildignore+=*.pyc
 " GUI Settings {{{
 if has('gui_running')
     " Set default GUI font
-    set guifont=monofur\ for\ Powerline\ 11.6
+    set guifont=Monoid\ 9
 
     " Remove scroll bars
     set guioptions-=L
@@ -264,15 +264,33 @@ au WinEnter,BufEnter,BufRead,FileType,Colorscheme *
 let g:format_FormatConcealed = 1
 let g:format_HTMLAdditionalCSS = '
 \ @font-face {
-\   font-family: "monofur";
-\   src: url("https://s3.amazonaws.com/oblitum-fonts/monofur-webfont.eot");
-\   src: local("monofur for Powerline"),
-\        url("https://s3.amazonaws.com/oblitum-fonts/monofur-webfont.woff") format("woff"),
-\        url("https://s3.amazonaws.com/oblitum-fonts/monofur-webfont.ttf") format("truetype"),
-\        url("https://s3.amazonaws.com/oblitum-fonts/monofur-webfont.svg") format("svg");
+\     font-family: "Monoid";
+\     src: local("Monoid"),
+\          url("https://s3.amazonaws.com/oblitum-fonts/monoid-regular-xtrasmall-dollar-nocalt.woff2") format("woff2"),
+\          url("https://s3.amazonaws.com/oblitum-fonts/monoid-regular-xtrasmall-dollar-nocalt.woff") format("woff");
+\     font-weight: normal;
+\     font-style: normal;
 \ }
-\ body { font-family: "monofur", "Bitstream Vera Sans Mono", "DejaVu Sans Mono", Monaco, monospace; font-size:11.6pt; -webkit-font-smoothing: antialiased; }'
-" \ body { font-family: "monofur", "Bitstream Vera Sans Mono", "DejaVu Sans Mono", Monaco, monospace; font-size:10.2pt; letter-spacing: 0.01rem; -webkit-font-smoothing: antialiased; }'
+\
+\ @font-face {
+\     font-family: "Monoid";
+\     src: local("Monoid Bold"),
+\          url("https://s3.amazonaws.com/oblitum-fonts/monoid-bold-xtrasmall-dollar-nocalt.woff2") format("woff2"),
+\          url("https://s3.amazonaws.com/oblitum-fonts/monoid-bold-xtrasmall-dollar-nocalt.woff") format("woff");
+\     font-weight: bold;
+\     font-style: normal;
+\ }
+\
+\ @font-face {
+\     font-family: "Monoid";
+\     src: local("Monoid Italic"),
+\          url("https://s3.amazonaws.com/oblitum-fonts/monoid-italic-xtrasmall-dollar-nocalt.woff2") format("woff2"),
+\          url("https://s3.amazonaws.com/oblitum-fonts/monoid-italic-xtrasmall-dollar-nocalt.woff") format("woff");
+\     font-weight: normal;
+\     font-style: italic;
+\ }
+\
+\ body { font-family: "Monoid", "Bitstream Vera Sans Mono", "DejaVu Sans Mono", Monaco, monospace; font-size:9pt; -webkit-font-smoothing: antialiased; }'
 " }}}
 
 " Syntastic Setup {{{
