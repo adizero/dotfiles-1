@@ -2,7 +2,7 @@ session_name: mail
 windows:
 - window_name: oblita
   panes:
-    - mutt -F ~/.muttrc.oblita
+    - MUTT_ACCOUNT=oblita mutt
 - window_name: francisco
   panes:
-    - mutt -F ~/.muttrc.francisco
+    - MUTT_ACCOUNT=francisco mutt

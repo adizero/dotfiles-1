@@ -1,8 +1,8 @@
 export KEYTIMEOUT=1
 export STEAM_RUNTIME=0
-export DASHT_DOCSETS_DIR=$HOME/.local/share/Zeal/Zeal/docsets
-
+export MUTT_ACCOUNT=oblita
 export RUST_SRC_PATH=/opt/src/rust/src
+export DASHT_DOCSETS_DIR=$HOME/.local/share/Zeal/Zeal/docsets
 
 GEM_PATH=$(ruby -rubygems -e "puts Gem.user_dir")
 

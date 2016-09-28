@@ -1,3 +1,4 @@
+source "gpg -d ~/.mutt/accounts/$MUTT_ACCOUNT |"
 source ~/.mutt/keybindings
 source ~/.mutt/aliases
 set realname = "Francisco Lopes"
