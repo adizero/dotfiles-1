@@ -321,7 +321,7 @@ function! s:getbg(group)
     endif
 
     if l:bg == '-1' || l:bg !~ l:validation
-        return ''
+        let l:bg = 'NONE'
     endif
 
     return l:mode . 'bg=' . l:bg
@@ -526,15 +526,39 @@ let g:goyo_width = 120
 let g:goyo_margin_top = 2
 let g:goyo_margin_bottom = 2
 
-function! s:goyo_leave()
+" Reapply highlighting tweaks
+function! s:highlighting_tweaks()
     hi! link Conceal Normal
     hi! link SignColumn ColorColumn
     if !has('gui_running')
         hi! Normal ctermbg=NONE guibg=NONE
         hi! NonText ctermbg=NONE guibg=NONE
     endif
+    hi! link SyntasticErrorLine SignColumn
+    hi! link SyntasticWarningLine SignColumn
+    exec 'hi! SyntasticErrorSign guifg=red ctermfg=red ' . s:getbg('SyntasticErrorLine')
+    exec 'hi! SyntasticWarningSign guifg=yellow ctermfg=yellow ' . s:getbg('SyntasticWarningLine')
+    exec 'hi! SyntasticError ' . s:getbg('SyntasticErrorLine')
+    exec 'hi! SyntasticWarning ' . s:getbg('SyntasticWarningLine')
 endfunction
 
+function! s:goyo_enter()
+    call s:highlighting_tweaks()
+    if !has('gui_running')
+        " Remove artifacts for NeoVim on true colors transparent background.
+        " guifg is the terminal's background color.
+        hi! VertSplit gui=NONE guifg=#1b202a guibg=NONE
+        hi! StatusLine gui=NONE guifg=#1b202a guibg=NONE
+        hi! StatusLineNC gui=NONE guifg=#1b202a guibg=NONE
+    endif
+endfunction
+
+function! s:goyo_leave()
+    call s:highlighting_tweaks()
+endfunction
+
+au! User GoyoEnter
+au  User GoyoEnter nested call <SID>goyo_enter()
 au! User GoyoLeave
 au  User GoyoLeave nested call <SID>goyo_leave()
 
