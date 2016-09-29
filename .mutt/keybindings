@@ -23,6 +23,7 @@ bind index                      \Cy previous-line
 bind pager,index                dd  delete-message
 
 # Mail & Reply
+bind pager,index                gr  group-reply
 bind index                      \Cm list-reply # Doesn't work currently
 
 # Threads
