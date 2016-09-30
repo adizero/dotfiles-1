@@ -213,6 +213,20 @@ let g:airline_powerline_fonts = 1
 " }}}
 
 " File Type Settings {{{
+" Git
+au FileType gitcommit setlocal spell
+
+" Mail
+au FileType mail setlocal spell
+
+" Markdown
+au FileType markdown setlocal spell
+
+" Pandoc
+au FileType pandoc setlocal spell
+
+" Mmark
+au BufNewFile,BufRead *.mmark set filetype=pandoc
 
 " C++
 au BufNewFile,BufRead *
@@ -241,9 +255,6 @@ let g:rustfmt_autosave = 1
 
 " Java
 au FileType java setlocal omnifunc=javacomplete#Complete
-
-" Mmark
-au BufNewFile,BufRead *.mmark set filetype=pandoc
 
 " Elm
 let g:elm_setup_keybindings = 0
