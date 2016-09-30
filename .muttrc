@@ -23,11 +23,12 @@ ignore "Authentication-Results:"
 ignore "DomainKey-Signature:"
 ignore "DKIM-Signature:"
 hdr_order Date From To Cc
-alternative_order text/plain text/html *
-auto_view text/html
+alternative_order text/plain text/enriched text/html
+auto_view text/html application/pdf
 bind editor <tab> complete-query
 bind editor ^T complete
 bind editor <space> noop
+bind attach <space> view-mailcap
 
 # GooBook
 set query_command="goobook query '%s'"

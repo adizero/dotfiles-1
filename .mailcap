@@ -1,0 +1,26 @@
+text/html ; firefox -new-tab %s & sleep 5     ; description="HTML Document" ; test=test -n "$DISPLAY" ; nametemplate=%s.html
+text/html ; w3m -I %{charset} -T text/html %s ; description="HTML Document" ; nametemplate=%s.html    ; copiousoutput
+
+text/* ; view '%s' ; edit=vim '%s' ; compose=vim '%s' ; needsterminal
+
+application/pdf ; zathura %s &> /dev/null ; description="PDF Document" ; test=test -n "$DISPLAY" ; nametemplate=%s.pdf
+application/pdf ; pdftotext %s -          ; description="PDF Document" ; nametemplate=%s.pdf     ; copiousoutput
+
+image/pdf                ; eog %s &> /dev/null ; description="PDF Image"   ; test=test "$DISPLAY" ; nametemplate=%s.pdf
+image/gif                ; eog %s &> /dev/null ; description="GIF Image"   ; test=test "$DISPLAY" ; nametemplate=%s.gif
+image/jpeg               ; eog %s &> /dev/null ; description="JPEG Image"  ; test=test "$DISPLAY" ; nametemplate=%s.jpeg
+image/pjpeg              ; eog %s &> /dev/null ; description="JPEG Image"  ; test=test "$DISPLAY" ; nametemplate=%s.jpeg
+image/tiff               ; eog %s &> /dev/null ; description="TIFF Image"  ; test=test "$DISPLAY" ; nametemplate=%s.tiff
+image/x-portable-bitmap  ; eog %s &> /dev/null ; description="PBM Image"   ; test=test "$DISPLAY" ; nametemplate=%s.pbm
+image/x-portable-graymap ; eog %s &> /dev/null ; description="PGM Image"   ; test=test "$DISPLAY" ; nametemplate=%s.pgm
+image/x-portable-pixmap  ; eog %s &> /dev/null ; description="PPM Image"   ; test=test "$DISPLAY" ; nametemplate=%s.ppm
+image/x-xbitmap          ; eog %s &> /dev/null ; description="XBM Image"   ; test=test "$DISPLAY" ; nametemplate=%s.xbm
+image/x-xpixmap          ; eog %s &> /dev/null ; description="XPM Image"   ; test=test "$DISPLAY" ; nametemplate=%s.xpm
+image/bmp                ; eog %s &> /dev/null ; description="BMP Image"   ; test=test "$DISPLAY" ; nametemplate=%s.bmp
+image/x-bmp              ; eog %s &> /dev/null ; description="BMP Image"   ; test=test "$DISPLAY" ; nametemplate=%s.bmp
+image/x-ms-bmp           ; eog %s &> /dev/null ; description="BMP Image"   ; test=test "$DISPLAY" ; nametemplate=%s.bmp
+image/x-rgb              ; eog %s &> /dev/null ; description="RGB Image"   ; test=test "$DISPLAY" ; nametemplate=%s.rgb
+image/targa              ; eog %s &> /dev/null ; description="TARGA Image" ; test=test "$DISPLAY" ; nametemplate=%s.tga
+image/fits               ; eog %s &> /dev/null ; description="FITS Image"  ; test=test "$DISPLAY" ; nametemplate=%s.fits
+image/png                ; eog %s &> /dev/null ; description="PNG Image"   ; test=test "$DISPLAY" ; nametemplate=%s.png
+image/pm                 ; eog %s &> /dev/null ; description="PM Image"    ; test=test "$DISPLAY" ; nametemplate=%s.pm
