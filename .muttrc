@@ -19,6 +19,7 @@ set sort             = 'threads'
 set sort_aux         = 'reverse-last-date-received'
 set auto_tag         = yes
 set record           = ''
+set quit             = ask-yes
 set include
 set uncollapse_jump
 set imap_check_subscribed
