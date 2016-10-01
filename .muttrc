@@ -1,41 +1,44 @@
 source "gpg -d ~/.mutt/accounts/$MUTT_ACCOUNT |"
 source ~/.mutt/keybindings
 source ~/.mutt/colorscheme
-set realname = "Francisco Lopes"
-set editor = "vim"
-set folder = "imaps://imap.gmail.com:993"
-set spoolfile = "+INBOX"
-set imap_check_subscribed
-set hostname = gmail.com
-set mail_check = 120
-set timeout = 300
-set imap_keepalive = 300
-set postponed = "+[GMail]/Drafts"
-set header_cache = ~/.mutt/cache/headers
+folder-hook . 'push <collapse-all>'
+set realname         = 'Francisco Lopes'
+set editor           = 'vim'
+set folder           = 'imaps://imap.gmail.com:993'
+set spoolfile        = '+INBOX'
+set hostname         = gmail.com
+set mail_check       = 120
+set timeout          = 300
+set imap_keepalive   = 300
+set postponed        = '+[GMail]/Drafts'
+set header_cache     = ~/.mutt/cache/headers
 set message_cachedir = ~/.mutt/cache/bodies
 set certificate_file = ~/.mutt/certificates
-set move = no
+set move             = no
+set sort             = 'threads'
+set sort_aux         = 'reverse-last-date-received'
+set auto_tag         = yes
+set record           = ''
 set include
-set sort = 'threads'
-set sort_aux = 'reverse-last-date-received'
-set auto_tag = yes
-set record = ""
-ignore "Authentication-Results:"
-ignore "DomainKey-Signature:"
-ignore "DKIM-Signature:"
+set uncollapse_jump
+set imap_check_subscribed
+unset collapse_unread
+ignore 'DKIM-Signature:'
+ignore 'DomainKey-Signature:'
+ignore 'Authentication-Results:'
 hdr_order Date From To Cc
-alternative_order text/plain text/enriched text/html
 auto_view text/html application/pdf
-bind editor <tab> complete-query
+alternative_order text/plain text/enriched text/html
 bind editor ^T complete
+bind editor <tab> complete-query
 bind editor <space> noop
 bind attach <space> view-mailcap
 
 # GooBook
-set query_command="goobook query '%s'"
-macro index,pager a "<pipe-message>goobook add<return>" "add sender to google contacts"
+set query_command    = "goobook query '%s'"
+macro index,pager    a "<pipe-message>goobook add<return>" 'add sender to google contacts'
 
 # Sidebar configuration
+set sidebar_format   = '%B%?F? [%F]?%* %?N?%N/?%S'
 set sidebar_visible
-set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
 set mail_check_stats
