@@ -7,7 +7,7 @@ set editor           = 'vim'
 set folder           = 'imaps://imap.gmail.com:993'
 set spoolfile        = '+INBOX'
 set hostname         = gmail.com
-set mail_check       = 120
+set mail_check       = 60
 set timeout          = 300
 set imap_keepalive   = 300
 set postponed        = '+[GMail]/Drafts'
@@ -30,10 +30,6 @@ ignore 'Authentication-Results:'
 hdr_order Date From To Cc
 auto_view text/html application/pdf
 alternative_order text/plain text/enriched text/html
-bind editor ^T complete
-bind editor <tab> complete-query
-bind editor <space> noop
-bind attach <space> view-mailcap
 
 # GooBook
 set query_command    = "goobook query '%s'"

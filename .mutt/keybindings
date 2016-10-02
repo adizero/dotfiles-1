@@ -1,3 +1,8 @@
+bind editor                     ^T complete
+bind editor                     <tab> complete-query
+bind editor                     <space> noop
+bind attach                     <space> view-mailcap
+
 #------------------------------------------------------------
 # Vi Key Bindings
 #------------------------------------------------------------
@@ -34,3 +39,6 @@ bind pager,index                gt  next-thread
 bind pager,index                gT  previous-thread
 bind index                      za  collapse-thread
 bind index                      zA  collapse-all # Missing :folddisable/foldenable
+
+# Refreshing
+bind index                      \Cl imap-fetch-mail
