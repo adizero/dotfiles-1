@@ -640,9 +640,7 @@ let g:codi#interpreters = {
 "}}}
 
 " Gist.vim Setup {{{
-if !has('gui_running')
-    let g:gist_clip_command = 'xclip -selection clipboard'
-endif
+let g:gist_put_url_to_clipboard_after_post = 1
 "}}}
 
 " vim-lastplace Setup {{{
