@@ -2,5 +2,5 @@
 
 pkill xcape && echo Killed old xcape processes...
 
-xmodmap /etc/X11/Xmodmap
+xmodmap ${HOME}/.xmodmap.conf
 xcape
