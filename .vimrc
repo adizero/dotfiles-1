@@ -252,6 +252,7 @@ let g:rubycomplete_classes_in_global = 1
 
 " Rust
 let g:rustfmt_autosave = 1
+let g:rustfmt_fail_silently = 1
 
 " Java
 au FileType java setlocal omnifunc=javacomplete#Complete
