@@ -458,18 +458,25 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-stand
 nnoremap <silent> <leader>b :CtrlPBuffer<cr>
 " }}}
 
-" ClangFormat Setup {{{
+" Clang-Format Setup {{{
 let g:clang_format#style_options = {
+    \ "Standard": "Cpp11",
+    \ "SortIncludes": "false",
     \ "AccessModifierOffset": -4,
+    \ "PointerBindsToType": "false",
+    \ "DerivePointerBinding": "false",
     \ "AllowShortLoopsOnASingleLine": "false",
     \ "AllowShortBlocksOnASingleLine" : "false",
     \ "AllowShortIfStatementsOnASingleLine": "false",
     \ "AlwaysBreakTemplateDeclarations": "false",
-    \ "DerivePointerBinding": "false",
-    \ "PointerBindsToType": "false",
+    \ "AlignConsecutiveDeclarations": "true",
+    \ "AlignConsecutiveAssignments": "true",
+    \ "AlignEscapedNewlinesLeft": "true",
+    \ "AlignTrailingComments": "true",
+    \ "AlignOperands": "true",
     \ "ColumnLimit": 80,
-    \ "TabWidth": 4,
-    \ "Standard": "C++11" }
+    \ "TabWidth": 4
+    \ }
 au FileType c,cpp,objc,objcpp noremap  <silent> <buffer> <leader>= :ClangFormat<cr>
 " }}}
 
