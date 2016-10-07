@@ -1,7 +1,17 @@
 import os
 import ycm_core
 
-flags = [
+c_flags = [
+'-x', 'c',
+'-Wall',
+'-Wextra',
+'-std=gnu11',
+'-isystem', '/usr/local/include',
+'-isystem', '/usr/lib/clang/3.8.1/include',
+'-isystem', '/usr/include',
+]
+
+cxx_flags = [
 '-x', 'c++',
 '-Wall',
 '-Wextra',
@@ -27,7 +37,9 @@ if os.path.exists( compilation_database_folder ):
 else:
   database = None
 
-SOURCE_EXTENSIONS = [ '.cpp', '.cxx', '.cc', '.c', '.m', '.mm' ]
+C_SOURCE_EXTENSIONS   = [ '.c', '.m' ]
+CXX_SOURCE_EXTENSIONS = [ '.cpp', '.cxx', '.cc', '.mm' ]
+SOURCE_EXTENSIONS     = C_SOURCE_EXTENSIONS + CXX_SOURCE_EXTENSIONS
 
 def DirectoryOfThisScript():
   return os.path.dirname( os.path.abspath( __file__ ) )
@@ -95,11 +107,18 @@ def FlagsForFile( filename, **kwargs ):
     if not compilation_info:
       return None
 
-    final_flags = MakeRelativePathsInFlagsAbsolute(
-      compilation_info.compiler_flags_,
-      compilation_info.compiler_working_dir_ )
+    return {
+      'flags': MakeRelativePathsInFlagsAbsolute(
+        compilation_info.compiler_flags_,
+        compilation_info.compiler_working_dir_ ) }
   else:
     relative_to = DirectoryOfThisScript()
-    final_flags = MakeRelativePathsInFlagsAbsolute( flags, relative_to )
+    extension = os.path.splitext( filename )[ 1 ]
+    if extension in C_SOURCE_EXTENSIONS:
+      return {
+        'flags': MakeRelativePathsInFlagsAbsolute( c_flags, relative_to ) }
+    elif extension in CXX_SOURCE_EXTENSIONS:
+      return {
+        'flags': MakeRelativePathsInFlagsAbsolute( cxx_flags, relative_to ) }
 
-  return { 'flags': final_flags }
+  return None
