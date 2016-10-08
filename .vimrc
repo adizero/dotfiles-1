@@ -423,6 +423,10 @@ let g:quickrun_config = {
     \     'command': 'stack',
     \     'cmdopt': 'runghc --verbosity silent'
     \   },
+    \   'c' : {
+    \     'command': 'clang',
+    \     'cmdopt': '-g -O0 -Wall -Wextra -std=gnu11 -lpthread'
+    \   },
     \   'cpp' : {
     \     'command': 'clang++',
     \     'cmdopt': '-g -O0 -Wall -Wextra -pedantic -std=c++1z -stdlib=libc++ -lc++abi -lpthread'
