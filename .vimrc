@@ -33,7 +33,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'powerman/vim-plugin-AnsiEsc'
 Plug 'guns/xterm-color-table.vim'
 Plug 'leafgarland/typescript-vim'
-Plug 'chrisbra/vim-diff-enhanced'
+"Plug 'chrisbra/vim-diff-enhanced'
 Plug 'vim-scripts/SyntaxAttr.vim'
 Plug 'suan/vim-instant-markdown'
 Plug 'terryma/vim-expand-region'
@@ -41,6 +41,7 @@ Plug 'neovimhaskell/haskell-vim'
 Plug 'idris-hackers/idris-vim'
 Plug 'Valloric/MatchTagAlways'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-syntastic/syntastic'
 Plug 'rhysd/vim-clang-format'
 Plug 'junegunn/limelight.vim'
 Plug 'dietsche/vim-lastplace'
@@ -54,7 +55,6 @@ Plug 'pgdouyon/vim-evanesco'
 Plug 'idanarye/vim-vebugger'
 Plug 'junegunn/seoul256.vim'
 Plug 'Raimondi/delimitMate'
-Plug 'scrooloose/syntastic'
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 "Plug 'edkolev/tmuxline.vim'
 Plug 'djoshea/vim-autoread'
@@ -539,7 +539,8 @@ let g:ophigh_filetypes_to_ignore = {
     \ 'qf': 1, 'help': 1, 'unite': 1, 'tagbar': 1, 'gundo': 1, 'vimshell': 1, 'vimfiler': 1, 'quickrun': 1, 'vim-plug': 1, 'codi': 1,
     \ 'zsh': 1, 'gitcommit': 1, 'text': 1, 'html': 1, 'javascript': 1, 'json': 1, 'css': 1, 'scss': 1, 'latex': 1, 'pandoc': 1,
     \ 'haskell': 1, 'purescript': 1, 'elm': 1,
-    \ 'mail': 1, 'mailcap': 1, 'muttrc': 1
+    \ 'mail': 1, 'mailcap': 1, 'muttrc': 1,
+    \ 'yaml': 1
     \ }
 " }}}
 
@@ -620,12 +621,12 @@ let g:vebugger_leader = '<leader>v'
 
 " vim-multiple-cursors Setup {{{
 function! Multiple_cursors_before()
-    let g:ycm_auto_trigger = 0
+    call youcompleteme#DisableCursorMovedAutocommands()
     silent! exec 'NeoCompleteDisable'
 endfunction
 
 function! Multiple_cursors_after()
-    let g:ycm_auto_trigger = 1
+    call youcompleteme#EnableCursorMovedAutocommands()
     silent! exec 'NeoCompleteEnable'
 endfunction
 " }}}
