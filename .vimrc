@@ -23,7 +23,6 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'vim-airline/vim-airline-themes'
 "Plug 'enomsg/vim-haskellConcealPlus'
-Plug 'artur-shaik/vim-javacomplete2'
 Plug 'whatyouhide/vim-lengthmatters'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'xuhdev/vim-latex-live-preview'
@@ -68,7 +67,6 @@ Plug 'tpope/vim-obsession'
 Plug 'thinca/vim-quickrun'
 Plug 'Slava/vim-spacebars'
 Plug 'groenewege/vim-less'
-Plug 'hsanson/vim-android'
 Plug 'frigoeu/psc-ide-vim'
 Plug 'metakirby5/codi.vim'
 Plug 'honza/vim-snippets'
@@ -253,9 +251,6 @@ let g:rubycomplete_classes_in_global = 1
 " Rust
 let g:rustfmt_autosave = 1
 let g:rustfmt_fail_silently = 1
-
-" Java
-au FileType java setlocal omnifunc=javacomplete#Complete
 
 " Elm
 let g:elm_setup_keybindings = 0
@@ -528,7 +523,7 @@ call lengthmatters#highlight_link_to('ColorColumn')
 let g:lengthmatters_excluded = [
     \ '', 'qf', 'help', 'unite', 'tagbar', 'gundo', 'vimshell', 'vimfiler', 'quickrun', 'vim-plug', 'codi',
     \ 'zsh', 'html', 'javascript', 'json', 'css', 'scss', 'latex',
-    \ 'haskell', 'purescript', 'elm',
+    \ 'haskell', 'purescript', 'elm', 'java',
     \ 'mailcap', 'muttrc'
     \ ]
 " }}}
@@ -608,11 +603,6 @@ augroup VimCSS3Syntax
     au!
     au FileType css setlocal iskeyword+=-
 augroup END
-" }}}
-
-" vim-android Setup {{{
-let g:android_sdk_path = '/opt/android-sdk'
-let g:gradle_path = '/usr/bin'
 " }}}
 
 " Vebugger Setup {{{
