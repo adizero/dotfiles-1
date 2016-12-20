@@ -1,5 +1,6 @@
 export KEYTIMEOUT=1
 export STEAM_RUNTIME=0
+export STEAM_FRAME_FORCE_CLOSE=1
 export MUTT_ACCOUNT=oblita
 export RUST_SRC_PATH=/opt/src/rust/src
 export DASHT_DOCSETS_DIR=$HOME/.local/share/Zeal/Zeal/docsets
