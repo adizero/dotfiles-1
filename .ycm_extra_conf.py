@@ -117,8 +117,4 @@ def FlagsForFile( filename, **kwargs ):
     if extension in C_SOURCE_EXTENSIONS:
       return {
         'flags': MakeRelativePathsInFlagsAbsolute( c_flags, relative_to ) }
-    elif extension in CXX_SOURCE_EXTENSIONS:
-      return {
-        'flags': MakeRelativePathsInFlagsAbsolute( cxx_flags, relative_to ) }
-
-  return None
+  return { 'flags': MakeRelativePathsInFlagsAbsolute( cxx_flags, relative_to ) }
