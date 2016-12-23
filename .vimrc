@@ -520,7 +520,7 @@ let g:better_whitespace_filetypes_blacklist = [
 " }}}
 
 " lengthmatters Setup {{{
-call lengthmatters#highlight_link_to('ColorColumn')
+call lengthmatters#highlight('term=reverse ctermbg=236 guibg=#31415d') " Darker deep-space's ColorColumn
 let g:lengthmatters_excluded = [
     \ '', 'qf', 'help', 'unite', 'tagbar', 'gundo', 'vimshell', 'vimfiler', 'quickrun', 'vim-plug', 'codi',
     \ 'zsh', 'html', 'javascript', 'json', 'css', 'scss', 'latex',
