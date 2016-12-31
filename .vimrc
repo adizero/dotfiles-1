@@ -165,7 +165,7 @@ au FileType qf wincmd J | setlocal wrap
 au WinEnter * if &previewwindow | setlocal wrap | endif
 
 " Mappings
-nnoremap <leader>l :redraw!<cr>
+nnoremap <silent> <leader>l :redraw!<cr>
 " CTRL-W__ and CTRL-W_bar on steroids (resize windows adjusting to text)
 nnoremap <expr><silent> <c-w>_ (v:count ? v:count : float2nr(ceil(eval(join(map(getline(1,'$'),'max([winwidth(0),virtcol([v:key+1,"$"])])'),'+'))/str2float(winwidth(0).'.0'))))."\<c-w>_"
 nnoremap <expr><silent> <c-w><bar> (v:count ? v:count : max(map(getline(1,'$'),'virtcol([v:key+1,"$"])'))-1)."\<c-w>\<bar>"
@@ -376,12 +376,12 @@ let g:ycm_filetype_specific_completion_to_disable = {
     \ 'html': 1,
     \ 'css': 1
     \}
-nnoremap <leader>1 :YcmCompleter GoToDeclaration<cr>
-nnoremap <leader>2 :YcmCompleter GoToDefinition<cr>
-nnoremap <leader>3 :YcmCompleter GoToImprecise<cr>
-nnoremap <leader>4 :YcmCompleter GoTo<cr>
-nnoremap <leader>i :YcmCompleter GoToInclude<cr>
-nnoremap <leader>x :YcmCompleter FixIt<cr>
+nnoremap <silent> <leader>1 :YcmCompleter GoToDeclaration<cr>
+nnoremap <silent> <leader>2 :YcmCompleter GoToDefinition<cr>
+nnoremap <silent> <leader>3 :YcmCompleter GoToImprecise<cr>
+nnoremap <silent> <leader>4 :YcmCompleter GoTo<cr>
+nnoremap <silent> <leader>i :YcmCompleter GoToInclude<cr>
+nnoremap <silent> <leader>x :YcmCompleter FixIt<cr>
 " }}}
 
 " neocomplete Setup {{{
@@ -448,7 +448,7 @@ let g:vimshell_prompt_pattern = '^\%(\f\|\\.\)\+> '
 
 " VimFiler Setup {{{
 let g:vimfiler_as_default_explorer = 1
-nnoremap <leader>f :VimFilerExplorer<cr>
+nnoremap <silent> <leader>f :VimFilerExplorer<cr>
 au FileType vimfiler nmap <silent><buffer> <2-LeftMouse> <Plug>(vimfiler_smart_l)
 " }}}
 
@@ -623,7 +623,7 @@ endfunction
 " }}}
 
 " Sayonara Setup {{{
-nnoremap <leader>q :Sayonara!<cr>
+nnoremap <silent> <leader>q :Sayonara!<cr>
 " }}}
 
 " vim-journal Setup {{{
@@ -652,7 +652,7 @@ let g:lastplace_open_folds = 0
 "}}}
 
 " TagBar Setup {{{
-nnoremap <leader>t :TagbarToggle<cr>
+nnoremap <silent> <leader>t :TagbarToggle<cr>
 
 let g:tagbar_type_go = {
     \ 'ctagstype' : 'go',
@@ -761,8 +761,8 @@ function! FancyPaste(reg)
     call append(line('.'), paste)
 endfunction
 
-nnoremap <leader>p :call FancyPaste('"')<cr>
-nnoremap <leader>P :call FancyPaste('+')<cr>
+nnoremap <silent> <leader>p :call FancyPaste('"')<cr>
+nnoremap <silent> <leader>P :call FancyPaste('+')<cr>
 " }}}
 
 " Edit command output in a buffer {{{
