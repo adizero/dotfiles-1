@@ -78,7 +78,6 @@ Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
 Plug 'romainl/Apprentice'
 Plug 'rust-lang/rust.vim'
 Plug 'bitc/vim-hdevtools'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'godlygeek/tabular'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-abolish'
@@ -104,6 +103,7 @@ Plug 'tpope/vim-ragtag'
 Plug 'Shougo/unite.vim'
 Plug 'chrisbra/NrrwRgn'
 Plug 'tpope/vim-repeat'
+Plug 'junegunn/fzf.vim'
 Plug 'xolox/vim-shell'
 Plug 'keith/swift.vim'
 Plug 'elmcast/elm-vim'
@@ -119,6 +119,7 @@ Plug 'suy/vim-qmake'
 Plug 'elzr/vim-json'
 Plug 'lervag/vimtex'
 Plug 'fatih/vim-go'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 " }}}
 
 call plug#end()
@@ -454,13 +455,6 @@ nnoremap <silent> <leader>f :VimFilerExplorer<cr>
 au FileType vimfiler nmap <silent><buffer> <2-LeftMouse> <Plug>(vimfiler_smart_l)
 " }}}
 
-" CtrlP Setup {{{
-let g:ctrlp_working_path_mode = 0
-let g:ctrlp_follow_symlinks = 1
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
-nnoremap <silent> <leader>b :CtrlPBuffer<cr>
-" }}}
-
 " Clang-Format Setup {{{
 let g:clang_format#style_options = {
     \ "Standard": "Cpp11",
@@ -651,6 +645,11 @@ let g:gist_put_url_to_clipboard_after_post = 1
 
 " vim-lastplace Setup {{{
 let g:lastplace_open_folds = 0
+"}}}
+
+" fzf Setup {{{
+nnoremap <silent> <leader>o :Files<cr>
+nnoremap <silent> <leader>b :Buffers<cr>
 "}}}
 
 " TagBar Setup {{{
