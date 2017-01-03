@@ -630,15 +630,6 @@ let g:journal#dirs =  ['Notes', 'notes', 'journal.d']
 let g:livepreview_previewer = 'zathura'
 "}}}
 
-" Codi Setup {{{
-let g:codi#interpreters = {
-    \     'purescript': {
-    \     'bin': ['pulp', 'psci'],
-    \         'prompt': '^> ',
-    \     },
-    \ }
-"}}}
-
 " Gist.vim Setup {{{
 let g:gist_put_url_to_clipboard_after_post = 1
 "}}}
