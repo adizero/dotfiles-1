@@ -456,6 +456,7 @@ au FileType vimfiler nmap <silent><buffer> <2-LeftMouse> <Plug>(vimfiler_smart_l
 " }}}
 
 " Clang-Format Setup {{{
+let g:clang_format#detect_style_file = 1
 let g:clang_format#style_options = {
     \ "Standard": "Cpp11",
     \ "SortIncludes": "false",
