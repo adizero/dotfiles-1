@@ -644,6 +644,10 @@ nnoremap <silent> <leader>o :Files<cr>
 nnoremap <silent> <leader>b :Buffers<cr>
 "}}}
 
+" EditorConfig Setup {{{
+let g:EditorConfig_max_line_indicator = "none"
+"}}}
+
 " TagBar Setup {{{
 nnoremap <silent> <leader>t :TagbarToggle<cr>
 
