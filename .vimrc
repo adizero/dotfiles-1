@@ -48,7 +48,7 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'raichoo/purescript-vim'
 Plug 'phongvcao/vim-stardict'
 "Plug 'Shougo/neocomplete.vim'
-Plug 'oblitum/YouCompleteMe'
+Plug 'oblitum/YouCompleteMe', { 'do': 'python ./install.py --clang-completer --gocode-completer --racer-completer --tern-completer' }
 Plug 'embear/vim-localvimrc'
 "Plug 'vim-pandoc/vim-pandoc'
 Plug 'pgdouyon/vim-evanesco'
