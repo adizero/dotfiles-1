@@ -277,7 +277,7 @@ let g:format_FormatConcealed = 1
 let g:format_HTMLAdditionalCSS = '
 \ @font-face {
 \     font-family: "Monoid";
-\     src: local("Monoid"),
+\     src: local("Monoid Regular"),
 \          url("https://s3.amazonaws.com/oblitum-fonts/monoid-regular-xtrasmall-dollar-nocalt.woff2") format("woff2"),
 \          url("https://s3.amazonaws.com/oblitum-fonts/monoid-regular-xtrasmall-dollar-nocalt.woff") format("woff");
 \     font-weight: normal;
