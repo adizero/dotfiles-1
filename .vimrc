@@ -270,6 +270,13 @@ au WinEnter,BufEnter,BufRead,FileType,Colorscheme *
     \     let w:lambda_conceal = matchadd('Conceal', '\\\%([^\\]\+→\)\@=', 10, -1, {'conceal': 'λ'}) |
     \     hi! link Conceal Operator                                                                  |
     \ endif
+
+" OCaml
+let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+if !empty(g:opamshare) && g:opamshare !~ 'not found'
+    exec 'set rtp+=' . g:opamshare . '/merlin/vim'
+    exec 'set rtp+=' . g:opamshare . '/ocp-indent/vim'
+endif
 " }}}
 
 " format.vim Setup {{{
@@ -354,6 +361,7 @@ au VimEnter,ColorScheme * exec 'hi! SyntasticWarning ' . s:getbg('SyntasticWarni
 let g:syntastic_auto_loc_list = 2
 let g:elm_syntastic_show_warnings = 1
 let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_ocaml_checkers = ['merlin']
 let g:syntastic_mode_map = { "mode": "active", "passive_filetypes": ["go", "html"] }
 " }}}
 
@@ -431,6 +439,13 @@ let g:quickrun_config = {
     \     'exec': ['%c %o %s -o %s:p:r', '%s:p:r %a'],
     \     'tempfile': '%{tempname()}.swift',
     \     'hook/sweep/files': ['%S:p:r'],
+    \   },
+    \   'ocaml' : {
+    \     'command': 'corebuild',
+    \     'cmdopt': '-quiet',
+    \     'exec': ['%c %o %s:t:r.byte', './%s:t:r.byte %a'],
+    \     'tempfile': '%{tempname()}.ml',
+    \     'hook/cd/directory': '%S:p:h',
     \   }
     \ }
 " }}}
@@ -527,7 +542,7 @@ let g:ophigh_highlight_link_group = 'Keyword'
 let g:ophigh_filetypes_to_ignore = {
     \ 'qf': 1, 'help': 1, 'unite': 1, 'tagbar': 1, 'gundo': 1, 'vimshell': 1, 'vimfiler': 1, 'quickrun': 1, 'vim-plug': 1, 'codi': 1,
     \ 'zsh': 1, 'gitcommit': 1, 'text': 1, 'html': 1, 'javascript': 1, 'json': 1, 'css': 1, 'scss': 1, 'latex': 1, 'pandoc': 1,
-    \ 'haskell': 1, 'purescript': 1, 'elm': 1,
+    \ 'haskell': 1, 'purescript': 1, 'elm': 1, 'ocaml': 1,
     \ 'mail': 1, 'mailcap': 1, 'muttrc': 1,
     \ 'yaml': 1
     \ }
