@@ -418,10 +418,6 @@ let g:quickrun_config = {
     \   '_': {
     \     'outputter/buffer/close_on_empty': 1
     \   },
-    \   'haskell' : {
-    \     'command': 'stack',
-    \     'cmdopt': 'runghc --verbosity silent'
-    \   },
     \   'c' : {
     \     'command': 'clang',
     \     'cmdopt': '-g -O0 -Wall -Wextra -std=gnu11 -lpthread'
