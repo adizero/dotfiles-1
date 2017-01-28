@@ -26,6 +26,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'whatyouhide/vim-lengthmatters'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'xuhdev/vim-latex-live-preview'
+Plug 'enricobacis/vim-airline-clock'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'jelera/vim-javascript-syntax'
 Plug 'terryma/vim-multiple-cursors'
@@ -657,6 +658,10 @@ nnoremap <silent> <leader>b :Buffers<cr>
 
 " EditorConfig Setup {{{
 let g:EditorConfig_max_line_indicator = "none"
+"}}}
+
+" vim-airline-clock Setup {{{
+let g:airline#extensions#clock#format = '%k:%M %b %e'
 "}}}
 
 " TagBar Setup {{{
