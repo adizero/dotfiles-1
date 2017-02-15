@@ -479,7 +479,6 @@ let g:clang_format#style_options = {
     \ "AllowShortBlocksOnASingleLine" : "false",
     \ "AllowShortIfStatementsOnASingleLine": "false",
     \ "AlwaysBreakTemplateDeclarations": "false",
-    \ "AlignConsecutiveDeclarations": "true",
     \ "AlignConsecutiveAssignments": "true",
     \ "AlignEscapedNewlinesLeft": "true",
     \ "AlignTrailingComments": "true",
