@@ -48,6 +48,7 @@ Plug 'dietsche/vim-lastplace'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'raichoo/purescript-vim'
 Plug 'phongvcao/vim-stardict'
+Plug 'chaoren/vim-wordmotion'
 "Plug 'Shougo/neocomplete.vim'
 Plug 'oblitum/YouCompleteMe', { 'do': 'python ./install.py --clang-completer --gocode-completer --racer-completer --tern-completer' }
 Plug 'embear/vim-localvimrc'
