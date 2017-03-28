@@ -363,6 +363,7 @@ au VimEnter,ColorScheme * exec 'hi! SyntasticWarning ' . s:getbg('SyntasticWarni
 let g:syntastic_auto_loc_list = 2
 let g:elm_syntastic_show_warnings = 1
 let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_rust_checkers = ['rustc']
 let g:syntastic_ocaml_checkers = ['merlin']
 let g:syntastic_mode_map = { "mode": "active", "passive_filetypes": ["go", "html"] }
 " }}}
