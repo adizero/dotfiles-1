@@ -5,7 +5,9 @@ export MUTT_ACCOUNT=oblita
 export RUST_SRC_PATH=/opt/src/rust/src
 export DASHT_DOCSETS_DIR=$HOME/.local/share/Zeal/Zeal/docsets
 
-GEM_PATH=$(ruby -rubygems -e "puts Gem.user_dir")
+if which ruby > /dev/null; then
+  GEM_PATH=$(ruby -rubygems -e "puts Gem.user_dir")
+fi
 
 if [ -d "$HOME/.cargo" ]; then export CARGO_HOME=$HOME/.cargo; fi
 if [ -n "$CARGO_HOME" ]; then PATH=$CARGO_HOME/bin:$PATH; fi
