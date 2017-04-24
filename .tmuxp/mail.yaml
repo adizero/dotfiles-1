@@ -4,5 +4,7 @@ windows:
   panes:
     - MUTT_ACCOUNT=oblita mutt
 - window_name: francisco
+  shell_command_before:
+    - sleep 1
   panes:
     - MUTT_ACCOUNT=francisco mutt

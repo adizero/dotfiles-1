@@ -1,0 +1,10 @@
+session_name: irc
+shell_command_before:
+  - sleep 0.2
+  - tmux set status off
+  - cls
+windows:
+- window_name: weechat
+  panes:
+  - shell_command:
+    - weechat
