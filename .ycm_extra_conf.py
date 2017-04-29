@@ -7,7 +7,7 @@ c_flags = [
 '-Wextra',
 '-std=gnu11',
 '-isystem', '/usr/local/include',
-'-isystem', '/usr/lib/clang/3.9.1/include',
+'-isystem', '/usr/lib/clang/4.0.0/include',
 '-isystem', '/usr/include',
 ]
 
@@ -20,7 +20,7 @@ cxx_flags = [
 '-stdlib=libc++',
 '-isystem', '/usr/include/c++/v1',
 '-isystem', '/usr/local/include',
-'-isystem', '/usr/lib/clang/3.9.1/include',
+'-isystem', '/usr/lib/clang/4.0.0/include',
 '-isystem', '/usr/include',
 ]
 
