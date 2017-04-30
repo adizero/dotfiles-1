@@ -8,8 +8,8 @@ set folder           = 'imaps://imap.gmail.com:993'
 set spoolfile        = '+INBOX'
 set hostname         = gmail.com
 set mail_check       = 60
-set timeout          = 300
-set imap_keepalive   = 300
+set timeout          = 10
+set imap_keepalive   = 150
 set postponed        = '+[GMail]/Drafts'
 set header_cache     = ~/.mutt/cache/headers
 set message_cachedir = ~/.mutt/cache/bodies
@@ -19,11 +19,14 @@ set sort             = 'threads'
 set sort_aux         = 'reverse-last-date-received'
 set auto_tag         = yes
 set record           = ''
+set ssl_starttls     = yes
+set ssl_force_tls    = yes
 set quit             = ask-yes
 set include
 set uncollapse_jump
 set imap_check_subscribed
 unset collapse_unread
+unset imap_passive
 ignore 'DKIM-Signature:'
 ignore 'DomainKey-Signature:'
 ignore 'Authentication-Results:'
