@@ -580,9 +580,10 @@ function! s:goyo_enter()
     if !has('gui_running')
         " Remove artifacts for NeoVim on true colors transparent background.
         " guifg is the terminal's background color.
-        hi! VertSplit gui=NONE guifg=#1b202a guibg=NONE
-        hi! StatusLine gui=NONE guifg=#1b202a guibg=NONE
-        hi! StatusLineNC gui=NONE guifg=#1b202a guibg=NONE
+        hi! VertSplit gui=NONE guifg=#1a1d24 guibg=NONE
+        hi! StatusLine gui=NONE guifg=#1a1d24 guibg=NONE
+        hi! StatusLineNC gui=NONE guifg=#1a1d24 guibg=NONE
+        hi! EndOfBuffer gui=NONE guifg=#1a1d24 guibg=NONE
     endif
 endfunction
 
@@ -790,7 +791,7 @@ command! -nargs=0 Messages :redir => bufout | silent :messages | redir END | new
 " Gist it to bl.ocks.org {{{
 function! Blocks() range
     if !has('gui_running')
-        hi! Normal ctermbg=234 guibg=#1b202a
+        hi! Normal ctermbg=234 guibg=#1a1d24
         exec a:firstline . ',' . a:lastline . 'Format format'
         hi! Normal ctermbg=NONE guibg=NONE
     else
