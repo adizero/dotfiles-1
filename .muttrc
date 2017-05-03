@@ -22,6 +22,7 @@ set record           = ''
 set ssl_starttls     = yes
 set ssl_force_tls    = yes
 set quit             = ask-yes
+set new_mail_command = 'paplay /usr/share/sounds/freedesktop/stereo/message.oga'
 set include
 set uncollapse_jump
 set imap_check_subscribed
