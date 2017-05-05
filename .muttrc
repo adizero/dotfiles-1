@@ -3,7 +3,7 @@ source ~/.mutt/keybindings
 source ~/.mutt/colorscheme
 folder-hook . 'push <collapse-all>'
 set realname         = 'Francisco Lopes'
-set editor           = 'vim'
+set editor           = 'nvim'
 set folder           = 'imaps://imap.gmail.com:993'
 set spoolfile        = '+INBOX'
 set hostname         = gmail.com
