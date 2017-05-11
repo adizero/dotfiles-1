@@ -152,7 +152,7 @@ set expandtab tabstop=4 shiftwidth=4 softtabstop=4 " space for tabs by default
 set t_ut=                   " fix 256 colors in tmux http://sunaku.github.io/vim-256color-bce.html
 set spelllang=en,pt_br      " set default spelling languages
 set updatetime=300          " set updatetime to shorter value
-set mouse=                  " disable mouse
+set mouse=a                 " enable mouse
 if has("termguicolors")     " set true colors
     set t_8f=[38;2;%lu;%lu;%lum
     set t_8b=[48;2;%lu;%lu;%lum
@@ -213,6 +213,7 @@ endif
 
 " Airline Setup {{{
 let g:airline_theme = 'deep_space'
+"let g:airline_theme = 'hybrid'
 let g:airline_powerline_fonts = 1
 " }}}
 
@@ -531,6 +532,7 @@ let g:better_whitespace_filetypes_blacklist = [
 
 " lengthmatters Setup {{{
 call lengthmatters#highlight('term=reverse ctermbg=236 guibg=#31415d') " Darker deep-space's ColorColumn
+"call lengthmatters#highlight('term=reverse ctermbg=251 guibg=#C8C7C8') " Lighter seoul256-light's ColorColumn
 let g:lengthmatters_excluded = [
     \ '', 'qf', 'help', 'unite', 'tagbar', 'gundo', 'vimshell', 'vimfiler', 'quickrun', 'vim-plug', 'codi',
     \ 'zsh', 'html', 'javascript', 'json', 'css', 'scss', 'latex',
