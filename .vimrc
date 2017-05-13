@@ -153,6 +153,7 @@ set t_ut=                   " fix 256 colors in tmux http://sunaku.github.io/vim
 set spelllang=en,pt_br      " set default spelling languages
 set updatetime=300          " set updatetime to shorter value
 set mouse=a                 " enable mouse
+set guicursor=              " disable cursor shape
 if has("termguicolors")     " set true colors
     set t_8f=[38;2;%lu;%lu;%lum
     set t_8b=[48;2;%lu;%lu;%lum
