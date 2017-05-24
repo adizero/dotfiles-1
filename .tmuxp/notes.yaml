@@ -12,6 +12,6 @@ windows:
     - tmux resize-pane -Z
     shell_command:
     - sleep 0.7
-    - nvim -c "Goyo"
+    - nvim -c Goyo
     focus: true
   - blank
