@@ -1,11 +1,8 @@
-session_name: music
+session_name: cmus
 shell_command_before:
-  - sleep 0.2
   - tmux set status off
-  - cls
 windows:
 - window_name: cmus
   panes:
   - shell_command:
     - cmus
-

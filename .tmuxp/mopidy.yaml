@@ -1,0 +1,16 @@
+session_name: mopidy
+shell_command_before:
+  - tmux set status off
+windows:
+- layout: main-horizontal
+  window_name: mopidy
+  options:
+    main-pane-height: 50
+  panes:
+  - shell_command_before:
+    - tmux resize-pane -Z
+    shell_command:
+    - ncmpcpp
+    focus: true
+  - shell_command:
+    - mopidy
