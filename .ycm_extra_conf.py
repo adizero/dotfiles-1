@@ -1,28 +1,26 @@
 import os
 import ycm_core
 
+common_flags = [
+    '-Wall',
+    '-Wextra',
+    '-isystem', '/usr/local/include',
+    '-isystem', '/usr/lib/clang/4.0.0/include',
+    '-isystem', '/usr/include',
+    ]
+
 c_flags = [
-'-x', 'c',
-'-Wall',
-'-Wextra',
-'-std=gnu11',
-'-isystem', '/usr/local/include',
-'-isystem', '/usr/lib/clang/4.0.0/include',
-'-isystem', '/usr/include',
-]
+    '-x', 'c',
+    '-std=gnu11',
+    ] + common_flags
 
 cxx_flags = [
-'-x', 'c++',
-'-Wall',
-'-Wextra',
-'-pedantic',
-'-std=c++1z',
-'-stdlib=libc++',
-'-isystem', '/usr/include/c++/v1',
-'-isystem', '/usr/local/include',
-'-isystem', '/usr/lib/clang/4.0.0/include',
-'-isystem', '/usr/include',
-]
+    '-x', 'c++',
+    '-pedantic',
+    '-std=c++1z',
+    '-stdlib=libc++',
+    '-isystem', '/usr/include/c++/v1',
+    ] + common_flags
 
 # Set this to the absolute path to the folder (NOT the file!) containing the
 # compile_commands.json file to use that instead of 'flags'. See here for
