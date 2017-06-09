@@ -242,6 +242,8 @@ au BufNewFile,BufRead *
     \     endif                                                                                   |
     \ endif
 
+au FileType cpp setlocal cinoptions+=L0	" disable automatic label dedent
+
 " Go
 let g:godef_split = 0
 au FileType go setlocal noexpandtab
