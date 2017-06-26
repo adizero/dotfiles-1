@@ -439,7 +439,7 @@ let g:quickrun_config = {
     \   },
     \   'cpp' : {
     \     'command': 'clang++',
-    \     'cmdopt': '-g -O0 -Wall -Wextra -pedantic -std=c++1z -stdlib=libc++ -lc++abi -lpthread'
+    \     'cmdopt': '-g -O0 -Wall -Wextra -pedantic -std=c++1z -stdlib=libc++ -lc++abi -lpthread -I/opt/src/range-v3/include -I/opt/src/GSL/include'
     \   },
     \   'swift' : {
     \     'command': 'swiftc',

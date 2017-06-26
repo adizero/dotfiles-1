@@ -5,7 +5,7 @@ common_flags = [
     '-Wall',
     '-Wextra',
     '-isystem', '/usr/local/include',
-    '-isystem', '/usr/lib/clang/4.0.0/include',
+    '-isystem', '/usr/lib/clang/4.0.1/include',
     '-isystem', '/usr/include',
     ]
 
@@ -20,6 +20,8 @@ cxx_flags = [
     '-std=c++1z',
     '-stdlib=libc++',
     '-isystem', '/usr/include/c++/v1',
+    '-I', '/opt/src/range-v3/include',
+    '-I', '/opt/src/GSL/include',
     ] + common_flags
 
 # Set this to the absolute path to the folder (NOT the file!) containing the
