@@ -35,7 +35,6 @@ Plug 'leafgarland/typescript-vim'
 "Plug 'chrisbra/vim-diff-enhanced'
 Plug 'vim-scripts/SyntaxAttr.vim'
 Plug 'oblitum/vim-tmux-navigator'
-Plug 'suan/vim-instant-markdown'
 Plug 'terryma/vim-expand-region'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'idris-hackers/idris-vim'
@@ -604,10 +603,6 @@ au  User GoyoLeave nested call <SID>goyo_leave()
 nnoremap <silent><F4> :Goyo<CR>
 vnoremap <silent><F4> :Goyo<CR>gv
 inoremap <silent><F4> <C-o>:Goyo<CR>
-" }}}
-
-" vim-instant-markdown Setup {{{
-let g:instant_markdown_autostart = 0
 " }}}
 
 " tern_for_vim Setup {{{
