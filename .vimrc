@@ -95,7 +95,6 @@ Plug 'fmoralesc/vim-pad'
 Plug 'majutsushi/tagbar'
 Plug 'szw/vim-maximizer'
 Plug 'mhinz/vim-grepper'
-Plug 'oblitum/goyo.vim'
 Plug 'tpope/vim-eunuch'
 Plug 'SirVer/ultisnips'
 Plug 'mattn/webapi-vim'
@@ -556,53 +555,6 @@ let g:ophigh_filetypes_to_ignore = {
 
 " Indent Guides Setup {{{
 let g:indent_guides_enable_on_vim_startup = 0
-" }}}
-
-" Goyo Setup {{{
-let g:goyo_width = 120
-let g:goyo_margin_top = 2
-let g:goyo_margin_bottom = 2
-
-" Reapply highlighting tweaks
-function! s:highlighting_tweaks()
-    hi! link Conceal Normal
-    hi! link SignColumn ColorColumn
-    if !has('gui_running')
-        hi! Normal ctermbg=NONE guibg=NONE
-        hi! NonText ctermbg=NONE guibg=NONE
-    endif
-    hi! link SyntasticErrorLine SignColumn
-    hi! link SyntasticWarningLine SignColumn
-    exec 'hi! SyntasticErrorSign guifg=red ctermfg=red ' . s:getbg('SyntasticErrorLine')
-    exec 'hi! SyntasticWarningSign guifg=yellow ctermfg=yellow ' . s:getbg('SyntasticWarningLine')
-    exec 'hi! SyntasticError ' . s:getbg('SyntasticErrorLine')
-    exec 'hi! SyntasticWarning ' . s:getbg('SyntasticWarningLine')
-endfunction
-
-function! s:goyo_enter()
-    call s:highlighting_tweaks()
-    if !has('gui_running')
-        " Remove artifacts for NeoVim on true colors transparent background.
-        " guifg is the terminal's background color.
-        hi! VertSplit gui=NONE guifg=#1a1d24 guibg=NONE
-        hi! StatusLine gui=NONE guifg=#1a1d24 guibg=NONE
-        hi! StatusLineNC gui=NONE guifg=#1a1d24 guibg=NONE
-        hi! EndOfBuffer gui=NONE guifg=#1a1d24 guibg=NONE
-    endif
-endfunction
-
-function! s:goyo_leave()
-    call s:highlighting_tweaks()
-endfunction
-
-au! User GoyoEnter
-au  User GoyoEnter nested call <SID>goyo_enter()
-au! User GoyoLeave
-au  User GoyoLeave nested call <SID>goyo_leave()
-
-nnoremap <silent><F4> :Goyo<CR>
-vnoremap <silent><F4> :Goyo<CR>gv
-inoremap <silent><F4> <C-o>:Goyo<CR>
 " }}}
 
 " tern_for_vim Setup {{{
